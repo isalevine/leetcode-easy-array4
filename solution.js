@@ -22,14 +22,16 @@
 
 
 var containsDuplicate = function(nums) {
-    for (i1 = 0; i1 < nums.length; i1++) {
-        let currentNum = nums[i1];
+    let obj = {};
+    
+    for (i = 0; i < nums.length; i++) {
+        let currentNum = nums[i].toString();
         
-        for (i2 = i1 + 1; i2 < nums.length; i2++) {
-            if (currentNum == nums[i2]) {
-                return true
-            };
+        if (obj[currentNum]) {
+            return true
         };
+        
+        obj[currentNum] = true;
     };
     
     return false
